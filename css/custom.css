@@ -1,0 +1,102 @@
+@charset "UTF-8";
+ 
+.masthead {
+	background:inherit;
+	background-color: #d31421;
+}
+
+.tying{
+	color : white;
+	font-weight: bold;
+	display:inline; 
+	word-wrap: break-word;
+	white-space: pre-wrap;
+}
+.blink{
+	animation: blink 1s infinite;
+	display:inline; 
+}
+
+.text-container {
+	position: relative;
+	font-size: 40vh;
+	font-weight: bold; 
+	color: white;
+	text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+	opacity: 0;
+	transform: translateY(-200px) scale(1.5);
+}
+
+.main_bg{
+	max-height : 100%;
+	margin-right : -80vh;
+}
+
+.letter{
+	position:fixed;
+	top : 30vh;
+	left : -35vw; 
+	width : 50vw; 
+	height : 10vh;
+	font-size : 30px;
+}
+
+.icon{
+	width : 40px;
+	border-radius:50%;
+	margin-right : 20px;
+	filter: grayscale(100%);
+}
+
+
+.effect {
+	animation: fall 0.8s cubic-bezier(0.3, 1.5, 0.3, 1) forwards
+} 
+
+.fade-in-image {
+	height: 100vh;
+	opacity: 0; /* 초기 투명 상태 */
+	transform: scale(0.9); /* 살짝 축소된 상태 */
+	animation: fadeIn 4s ease-out forwards;
+	 
+}
+
+ 
+@keyframes blink {
+  to {
+	opacity: 0;
+  }
+}
+
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+		transform: scale(0.9);
+	}
+	100% {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+
+@keyframes fall {
+	0% {
+		opacity: 0;
+		transform: translateY(-200px) scale(1.5);
+	}
+	50% {
+		opacity: 1;
+	}
+	80% {
+		transform: translateY(0) scale(1);
+	}
+	90% {
+		transform: translateY(-10px) scale(1.05);
+	}
+	100% {
+		transform: translateY(0) scale(1);
+	}
+}
+
+
+ 

@@ -1,0 +1,58 @@
+let frame = 0;
+let interval;
+let txtIdx = 0;
+const word = ["THE", "POWER", "OF", "PEOPLE"];
+const description = "He is..... righteous, brave and fair.\nWe pay tribute to him";
+
+
+$(document).ready(function(){
+	
+	interval = setInterval(function(){
+		animation();
+	}, 1000);
+});
+
+
+function animation(){
+
+
+	if(frame > word.length - 1 ){
+		$(".text-container").removeClass('effect');
+		let bg = "<img class=\"main_bg\" src=\"assets/img/main_bg.svg\" alt=\"main\" >";
+		
+		$(".text-container").html(bg);
+		$(".text-container").addClass('fade-in-image');
+		
+		setTimeout(function() {   
+			let letter = "<div class=\"letter\" ><div class=\"tying\" ></div><div class=\"blink\" >|</div></div>";
+			$(".text-container").append(letter);
+			typing();
+		}, 4000)
+		clearInterval(interval);
+		return;
+	}
+	
+	$(".text-container").text(word[frame]);
+	$(".text-container").removeClass('effect');
+	
+	setTimeout(function() {   
+		$(".text-container").addClass('effect');
+	},10);
+
+	frame++;
+}
+
+
+function typing(){
+	  var txt = description[txtIdx++];
+	  if (txt == undefined) return;
+	  var html = $(".tying").html(); 
+	  html += ( txt == "\n" ? "<br/>": txt);
+	  $(".tying").html(html); 
+	  if (txtIdx > description.length) {
+		 txtIdx = 0;
+	  }else{
+		 setTimeout(typing, 100)
+	  }
+}
+	
