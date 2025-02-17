@@ -35,7 +35,7 @@
 .letter{
 	position:fixed;
 	top : 30vh;
-	left : -35vw; 
+	left : -25vw; 
 	width : 50vw; 
 	height : 10vh;
 	font-size : 30px;
@@ -43,6 +43,7 @@
 
 .icon{
 	width : 40px;
+	height: 40px;
 	border-radius:50%;
 	margin-right : 20px;
 	filter: grayscale(100%);
@@ -50,17 +51,56 @@
 
 
 .effect {
-	animation: fall 0.8s cubic-bezier(0.3, 1.5, 0.3, 1) forwards
+	animation: fall 1s cubic-bezier(0.3, 1.5, 0.3, 1) forwards
 } 
 
 .fade-in-image {
 	height: 100vh;
 	opacity: 0; /* 초기 투명 상태 */
-	transform: scale(0.9); /* 살짝 축소된 상태 */
+	transform: scale(1); /* 살짝 축소된 상태 */
 	animation: fadeIn 4s ease-out forwards;
 	 
 }
 
+.about-section .form-address input {
+    box-shadow: 0 0.1875rem 0.1875rem 0 rgba(0, 0, 0, 0.1) !important;
+    padding: 1.25rem 2rem;
+    height: auto;
+    font-family: "Varela Round", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-size: 80%;
+    text-transform: uppercase;
+    letter-spacing: 0.15rem;
+    border: 0;
+}
+
+.form-address p{
+	color: #cecece;
+}
+
+.submitButton{
+	margin-right: 5px;
+}
+
+.faq-section{
+	padding: 10rem 0;
+    background: linear-gradient(to bottom, #000 0%, rgba(0, 0, 0, 0.9) 75%, rgba(0, 0, 0, 0.8) 100%);
+}
+
+.accordion-body{
+	text-align: left;
+}
+
+.pull-right{
+	float: right;
+}
+
+.sns_icon{
+	margin-right: 3px;
+}
+
+.img-fluid{
+	width: 612px; 
+}
  
 @keyframes blink {
   to {
@@ -71,18 +111,18 @@
 @keyframes fadeIn {
 	0% {
 		opacity: 0;
-		transform: scale(0.9);
+		transform: scale(1);
 	}
 	100% {
 		opacity: 1;
-		transform: scale(1);
+		transform: scale(1.1);
 	}
 }
 
 @keyframes fall {
 	0% {
 		opacity: 0;
-		transform: translateY(-200px) scale(1.5);
+		transform: translateY(-200px) scale(2);
 	}
 	50% {
 		opacity: 1;

@@ -13,6 +13,18 @@ $(document).ready(function(){
 });
 
 
+function clipboardCopy(){
+	const copy = $("#Solana_Contract_Address").val(); 
+
+	window.navigator.clipboard.writeText(copy).then(() => { 
+		alert("Token address copied to clipboard!");
+  	});
+}
+
+
+
+ 
+
 function animation(){
 
 
@@ -37,7 +49,7 @@ function animation(){
 	
 	setTimeout(function() {   
 		$(".text-container").addClass('effect');
-	},10);
+	},100);
 
 	frame++;
 }
